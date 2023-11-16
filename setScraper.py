@@ -102,28 +102,7 @@ df["Set Name"] = sets
 
 df.to_csv("2023sets.csv")
 
-headers
 
-daTags[0].text.strip() # strips out the white space # daTags is a list bruh
-
-daNames = [item.text.strip() for item in daTags]
-
-daTitle = bs.findAll('')
-
-daTitle = bs.find_all(class_ = "PromoImageOnTopCircular-description promo-description")
-
-titles = [daLooper.text.strip() for daLooper in daTitle]
-
-daDataFrame =  pd.DataFrame(list(zip(titles, daNames)),columns = ["daTitle", "daName"])
-
-daDataFrame.head
-
-
-for i in range(3, len(all_td)):
-  print(i)
-  
-  
-  
   
   
   
