@@ -21,12 +21,12 @@ for row in tableRows[3:]: # start at the third tr
   setUrl_text = firstTd.find("a")
   setUrl = setUrl_text.get('href')
   links.append(setUrl)
-  print(setUrl_text)
+  #print(setUrl_text)
 
 
-df = pd.DataFrame(links)
+df2 = pd.DataFrame(links)
 
-df["links"] = "www.psacard.com"  + df[0]
+df2["links"] = "https://www.psacard.com"  + df2[0]
 
-df = df.iloc[:,1:]
-df.to_csv("setLinks.csv", index = False)
+df2 = df2.iloc[:,1:]
+df2.to_csv("setLinks.csv", index = False)

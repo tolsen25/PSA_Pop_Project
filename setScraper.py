@@ -52,11 +52,11 @@ even_cardRows = bs.find_all('tr')
 # td_elements.find("a").text
 #odd_cardRows = bs.find_all("tr", {'class' : 'even'})
 
-for row in even_cardRows.find_all("td"):
-  setName = row.find("a").text
-  print(setName)
-
-sets=[]
+# for row in even_cardRows.find_all("td"):
+#   setName = row.find("a").text
+#   print(setName)
+# 
+# sets=[]
 
 # for row in even_cardRows[2:]:
 #     set_TD = row.find("td", {"class" : "text-left"})
