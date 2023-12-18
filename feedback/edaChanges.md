@@ -14,4 +14,4 @@ The third type of feedback had to do with the graphics and the the colors that I
 
 #### SHA number at time of feeback for blog posts: f1ed0942b5395381b0f813b54268d2dfd424f79c
 
-#### SHA number at time of feedback for dashboard: 6787276bbe01fe3ce75fc36914ae3a98ca14c483
+
