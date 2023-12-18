@@ -9,8 +9,7 @@ ne common point of feedback I received was to add more context to the blog posts
 ## Formatting:
 Another point of feedback was to add lines in between the images so that the text wouldn't crash into the images.  It was a small fix, but helped to make the blog post easier to read.  This also helped to clean up some image formatting issues.
 
-## Graphics
-The third type of feedback had to do with the graphics and the the colors that I chose for the plots.  Admitedly they are not perfect, but other than trying to add more context to the graphs I decided to focus onto fixing the other issues instead of tinkering with the graphs.  The decision of what colors I want has a lot to do with the theme of the blog which I might decide to change.  So instead of having to change them all again I decided to postpone changing the colors of the graphs.
 
 #### SHA number at time of feeback for blog posts: f1ed0942b5395381b0f813b54268d2dfd424f79c
+#### SHA number at time of feeback for blog posts: 808896cbccc74ed89df24d4a0402f36d68f6f79f
 #### SHA number at time of feedback for dashboard: 6787276bbe01fe3ce75fc36914ae3a98ca14c483
