@@ -1,8 +1,8 @@
 
-import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import streamlit as st
 from plotnine import *
 import re
 
@@ -22,7 +22,7 @@ df["Set Name"] = df["Year"].astype(str) + " " + df["Set Name"]
 #lngSet = pd.read_pickle("tidySets.pkl")
 #df = lngSet 
 
-tab1, tab2, tab3 = st.tabs(["Scatter", "Col", "Box"])
+tab1, tab2, tab3 = st.tabs(["Scatter", "Column", "Line"])
 # --------------------------------------------------------------------------------------------
 # Organizing types of charts with tabs
 with tab1:
@@ -77,12 +77,12 @@ with tab2:
     st.write("Choose the number of top sets for total cards") # slider input
     min_sets = st.slider('Num Sets',3,25,15)
 
-    st.write("Choose the minimum year") # slider input
-    min_age = st.slider('Year',1881,2022,1900)
+    st.write("Choose Year Range") # slider input
+    min_age = st.slider('Year',1881,2022,(1999,2022))
     
     topSetPop = (
     df
-    .loc[df['Year'] > min_age]
+    .loc[(df['Year'] > min_age[0]) & (df["Year"] < min_age[1])] 
     .groupby(["Set Name", "Year"])
     .agg(
         Total_Pop = ("Count", "sum")
@@ -105,16 +105,101 @@ with tab2:
                 theme_bw()+
                 labs(
                     title = "Total Number of Cards Graded for the Top " +  str(min_sets) + " Sets",
-                    subtitle = "Since " + str(min_age),
+                    subtitle = "From " + str(min_age[0]) + " to " + str(min_age[1]),
                     y = "Number of Cards Graded",
                     x = ""
                 )
 
     )
-
+    
     st.pyplot(ggplot.draw(topSetCol))
+# -----------------------------------------------------------------------------------------------------------------
+with tab3:
+    st.write("More coming soon")
+    myPickle = pd.read_pickle("allSets_final.pkl")
+    myPickle["Year"] = myPickle["Year"].str[:4]
+    myPickle = myPickle.drop("Total", axis = 1)
+    myPickle["Year"] = pd.to_datetime(myPickle['Year'], format = "%Y")
 
-st.write(df2)
+    result = myPickle[myPickle['Year'].dt.year > 1959].groupby(myPickle['Year'].dt.year).size().reset_index(name='Count')
+    result = result[result['Year'] < 2023]
+
+    linePlot = (ggplot(result, mapping = aes(x = "Year", y ="Count")) + 
+            geom_line(color = "blue") +
+            labs(
+                title = "Number of Unique Sets since 1960"
+
+
+            ) +
+            theme_bw()
+    
+    )
+    st.pyplot(ggplot.draw(linePlot))
+
+    df3 = (
+        df
+        .groupby(["Set Name", "Grade","Year"])
+        .agg(
+            Total_Pop=('Count', 'sum')
+        )
+        .reset_index()
+    )
+
+    df3["avg"] = df3["Grade"] * df3["Total_Pop"]
+
+    # Corrected aggregation
+    df3 = (
+        df3
+        .groupby(["Set Name", "Year"])
+        .agg(
+            Mean=("avg", "sum"),
+            Total_Pop=("Total_Pop", "sum")
+        )
+        .assign(Mean=lambda x: x["Mean"] / x["Total_Pop"])
+        .reset_index()
+    )
+
+    
+
+    x2 = (
+        df3
+        .groupby("Year")["Mean"]
+        .mean()
+        .reset_index()
+    )
+    
+    linePlot = (ggplot(x2, mapping = aes(x = "Year", y = "Mean"))+
+                geom_line() +
+                labs(
+                    y = "Average Grade",
+                    title = "Average Grade Over Time"
+                ) +
+                theme_bw()
+    )
+    st.pyplot(ggplot.draw(linePlot))
+    
+    
+
+
+    # year = st.slider('Year',1881,2022,1945)
+    # df3 = (
+    #     df2
+    #     .loc[df2["Year"]== year]
+    
+    # )
+    # df["Grade"] = df["Grade"].astype(str)
+    # st.write(df3)
+    
+    # yearBoxes = (ggplot(df3,mapping = aes(x = "Set Name", y = "Gem_MT_%")) +
+    #     geom_boxplot() 
+        
+        
+        
+    #     )
+    # st.pyplot(ggplot.draw(yearBoxes))
+
+
+#st.write(df2)
 
 
 

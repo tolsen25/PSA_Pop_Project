@@ -1,9 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
-
 import pandas as pd
 
-# URL of the Wikipedia page with the table
+# URL of the psa.com website with the links we want to scrape
 url = 'https://www.psacard.com/pop/baseball-cards/20003'
 
 
