@@ -1,0 +1,42 @@
+Feedback for part 1
+- In part 2  and 3 the text wraps weirdly around the pictures of your code. I'd try making some extra spaces between text and pictures to make it easier to see the different parts.
+- you said the data is saved as a pickle but I'd specify a pickle file
+- rewrite the first paragraph of part 4 cuz it's a little confusing. 
+- I'd add a little paragraph at the end of the post to wrap up part 1 and link to part 2
+
+Feedback for part 2
+- the labels and titles of the first plot are a little small. It might be good to increase the font size. I'd also confirm some of the history you and Braden were talking about with the big drop off in the 2000s and comment on it
+- For the second plot the bar outline and fill colors don't really go well together for me. 
+- For the gem mint % you say "as expected" but I think you should explain more about why it is expected. I'm not super familiar with baseball cards
+- The Gem Percentage  line plot fill color is a bit too highlighter cyan for my preference. I'd also suggest getting rid of the grid lines
+- For Gem mint % scatterplot I'd want to know what card company it was. Maybe make different colors for companies?
+- Part 5 the average grade plot has no title and the y axis label is lower case
+- In the conclusion, I'd make your takeaways a numbered list instead of shoving them into one sentence
+
+Feedback on Dashboard
+- Your dashboard takes a long time to load whenever you change the parameters. That might be because there's a large dataset that it has to work through and change. Have you tried making a smaller dataset of only the required values for each plot and exporting it as it's own .csv? That might speed up rendering time?
+- For the column tab, I'd fully spell out the label "Num Sets" for the selector
+
+Data Collection post feedback:
+Explain a little more about condition (what does Gem mint mean)
+In part 2, fix the spacing between the paragraph and the first image. Check for this issue throughout the post
+Images are fine, but having embedded code could be helpful for copy and pasting purposes.
+“This second scraper loops throug all of the urls…” has a typo
+Last sentence of part 3 should have a period.
+Also, it could be good in that sentence to explain what a pickle is.
+In Part 4, the “to” squished between the images is hard to read. Maybe put a space between the images and that word?
+Attach a link to your repo in the post. 
+
+EDA feedback:
+- in the intro, it could be helpful to refer back to the previous post in case someone wants to refer back to it.
+-it’s be fun to answer why there were drops in baseball card sets
+-you put questions on your posts, but never answer them. As a reader, I’d want to know the answers haha
+-On your gem% by year, it could be helpful to just have years on the x axis and not the whole date
+-for gem % by years from 2023, I was a little confused what each data point represented. Was that a set? It could be helpful to explain a little more.
+
+Dashboard:
+Maybe have the interactive labels not the column name in the dataset but the full name of that variable
+Also, for the total pop minimum interactive, there’s not a ton of values after 80,000. Maybe that can be the max of the interactive? 
+The tab names could be a little more descriptive
+
+
