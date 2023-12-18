@@ -7,7 +7,10 @@ The goal of this project is to scrape the pop report from the PSA website and ex
 The plots created for the EDA are in the `images` folder.  Most of these images were created using plotnine, but some used Matplotlib.
 
 ## Pickle files
-To save time loading in the data I saved files in .pkl files. These files are in the `pkl` folder
+To save time loading in the data I saved files in .pkl files. These files are in the `pkl` folder.
+
+## Scraping Code:
+The code to scrape the links and the all of the sets is in the `code` folder.
 
 ## Further Scraping
 The `psa-card-scrape-master` folder is for the scraping individual sets of cards.  This tool is from the psa-scrape repository and can be viewed [here](https://github.com/ChrisMuir/psa-scrape).  This code was used to scrape data for a tableau story. 
