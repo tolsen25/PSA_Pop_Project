@@ -26,6 +26,7 @@ Last sentence of part 3 should have a period.
 Also, it could be good in that sentence to explain what a pickle is.
 In Part 4, the “to” squished between the images is hard to read. Maybe put a space between the images and that word?
 Attach a link to your repo in the post. 
+
 EDA feedback:
 - in the intro, it could be helpful to refer back to the previous post in case someone wants to refer back to it.
 -it’s be fun to answer why there were drops in baseball card sets
