@@ -13,7 +13,7 @@ st.subheader("Uncovering the trends of over 140 years of baseball card data")
 
 @st.cache_data
 def load_data():
-    lngSet = pd.read_pickle("tidySets.pkl")
+    lngSet = pd.read_pickle("./pkl/tidySets.pkl")
     return lngSet
 
 df = load_data()
@@ -22,7 +22,7 @@ df["Set Name"] = df["Year"].astype(str) + " " + df["Set Name"]
 #lngSet = pd.read_pickle("tidySets.pkl")
 #df = lngSet 
 
-tab1, tab2, tab3 = st.tabs(["Scatter", "Column", "Line"])
+tab1, tab2, tab3 = st.tabs(["Scatter Plots", "Column Charts", "Line Plots"])
 # --------------------------------------------------------------------------------------------
 # Organizing types of charts with tabs
 with tab1:
@@ -39,9 +39,10 @@ with tab1:
 
     st.write("Choose the start year") # slider input
     min_year = st.slider('Year',1861,2022,1945)
+    st.write("Each dot represents a set")
     st.write("Many years have lots of small sets, choose the minimum pop count")
     st.write("Note: The smaller the minimum the more datapoints and the longer it will take to load")
-    min_size = st.slider('Total_Pop',1,350000,1000)
+    min_size = st.slider('Minimum Number of Cards Graded',1,80000,1000)
 
     df2 = (
         df
@@ -75,7 +76,7 @@ with tab1:
 #--------------------------------------------------------------------------------------------------
 with tab2:
     st.write("Choose the number of top sets for total cards") # slider input
-    min_sets = st.slider('Num Sets',3,25,15)
+    min_sets = st.slider('Number of Sets',3,25,15)
 
     st.write("Choose Year Range") # slider input
     min_age = st.slider('Year',1881,2022,(1999,2022))
@@ -116,7 +117,7 @@ with tab2:
 # -----------------------------------------------------------------------------------------------------------------
 with tab3:
     st.write("More coming soon")
-    myPickle = pd.read_pickle("allSets_final.pkl")
+    myPickle = pd.read_pickle("./pkl/allSets_final.pkl")
     myPickle["Year"] = myPickle["Year"].str[:4]
     myPickle = myPickle.drop("Total", axis = 1)
     myPickle["Year"] = pd.to_datetime(myPickle['Year'], format = "%Y")
